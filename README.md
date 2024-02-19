@@ -6,12 +6,12 @@ IBUFDS：在实验工程中如果需要将差分时钟转换成单端时钟作�
 
 ```
 IBUFDS #(
-      .DIFF_TERM("FALSE"),       // Differential Termination
-      .IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE" 
-      .IOSTANDARD("DEFAULT")     // Specify the input I/O standard
-   ) IBUFDS_inst (
-      .O(O),  // Buffer output
-      .I(I),  // Diff_p buffer input (connect directly to top-level port)
-      .IB(IB) // Diff_n buffer input (connect directly to top-level port)
-   );
+	.DIFF_TERM("TRUE"),       // use Differential Termination 在芯片内部激活差分终端电阻，以改善信号的接收质量。
+	.IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE" 优先考虑低功耗而非最高性能。
+	.IOSTANDARD("DEFAULT")     // Specify the input I/O standard 使用板上默认的 I/O 标准。
+) u_ibuf_sys_clk (
+	.O(sys_clk),  // Buffer output
+	.I(sys_clk_p),  // Diff_p buffer input (connect directly to top-level port)
+	.IB(sys_clk_n) // Diff_n buffer input (connect directly to top-level port)
+);       
 ```
