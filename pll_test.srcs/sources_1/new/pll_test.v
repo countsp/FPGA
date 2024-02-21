@@ -50,7 +50,7 @@ clk_wiz_0 clk_wiz_0_inst
     // Status and control signals	 
     .reset      (~rst_n   ),                // RESET IN
     .locked     (locked   ));               // OUT
-///////////////调用ODDR使时钟信号通过普通IO输出//////////////////	  
+///////////////璋冪敤ODDR浣挎椂閽熶俊鍙烽�氳繃鏅�欼O杈撳嚭//////////////////	  
 ODDR #(
 	.DDR_CLK_EDGE("SAME_EDGE")
 ) ODDR_inst (
