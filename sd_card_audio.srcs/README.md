@@ -18,4 +18,6 @@ pin12 AK24为生成的Irc与 pin9 AG24连接再与功放板Irc连接
 
 pin5 AF20为生成的sdata 与 功放板din连接
 
+功放板供电
+
 按下key2 开始播放sd卡中wav
