@@ -43,7 +43,10 @@ module top
 	output                             sd_dclk,                //SD card clock
 	output                             sd_mosi,                //SD card controller data output
 	input                              sd_miso,                //SD card controller data input	
-	//Differential system clocks
+	
+	output reg 			   ccclk,
+	output reg 			   lrc,
+	
 	input                              sys_clk_p,
 	input                              sys_clk_n
 );
