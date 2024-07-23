@@ -12,11 +12,11 @@
 
 #### 操作：
 
-pin11 AK23为生成的bdlk与pin6 AF21连接 再与功放板bclk连接
+pin35 AC22 为生成的 **bclk** 与功放板BCLK连接
 
-pin12 AK24为生成的Irc与 pin9 AG24连接再与功放板Irc连接
+pin36 AD22 为生成的 **LRC** 与功放板LRC连接
 
-pin5 AF20为生成的sdata 与 功放板din连接
+pin5 AF20为生成的 **sdata** 与 功放板din连接
 
 功放板供电
 
