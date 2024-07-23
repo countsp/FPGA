@@ -34,10 +34,7 @@ module top
 	input                              key,                   //record play button
 	output[1:0]                        led,
 	output                             fan_pwm,                  // fan control
-	
-	input                              bclk,            //audio bit clock
 	output                             dacdat,          //DAC audio data output 
-	input                              adclrc,          //ADC sample rate left right clock
 	
 	output                             sd_ncs,                 //SD card chip select (SPI mode)
 	output                             sd_dclk,                //SD card clock
@@ -53,6 +50,7 @@ module top
 
 wire                            sys_clk;
 wire                            clk_50m;
+wire                            clk_16m;
 wire[1:0]                       state_code;
 
 // timer for clk division (bclk and lrc)
@@ -139,9 +137,9 @@ sd_card_audio  sd_card_audio_m0(
 	.key1                       (key                     ),
 	.state_code                 (state_code               ),
 	
-	.bclk                       (bclk              ),
+	.bclk                       (ccclk              ),
 	.dacdat                     (dacdat            ),
-	.adclrc                     (adclrc            ),
+	.adclrc                     (lrc            ),
 	
 	.sd_ncs                     (sd_ncs                   ),
 	.sd_dclk                    (sd_dclk                  ),
