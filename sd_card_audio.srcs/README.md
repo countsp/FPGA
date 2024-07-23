@@ -22,6 +22,8 @@ pin5 AF20为生成的 **sdata** 与 功放板din连接
 
 按下key2 开始播放sd卡中wav
 
+![IMG_5701](https://github.com/user-attachments/assets/96bdd59e-bc03-4860-8441-bb0df3bf1f89)
+
 # 文件功能
 
 1. top.v
