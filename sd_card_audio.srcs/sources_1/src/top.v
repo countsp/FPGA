@@ -30,21 +30,20 @@
 `timescale 1ps/1ps
 module top
 (
-	input                              rst_n,	                //reset input
-	input                              key,                   //record play button
+	input                              rst_n,	           //reset input
+	input                              key,                    //record play button
 	output[1:0]                        led,
-	output                             fan_pwm,                  // fan control
-	
+	output                             fan_pwm,                // fan control
+	output                             dacdat,          	   //DAC audio data output 
 	
 	output                             sd_ncs,                 //SD card chip select (SPI mode)
 	output                             sd_dclk,                //SD card clock
 	output                             sd_mosi,                //SD card controller data output
 	input                              sd_miso,                //SD card controller data input	
 	
-	output                             dacdat,          //DAC audio data output 
+	
 	output reg 			   ccclk,
 	output reg 			   lrc,
-	
 	input                              sys_clk_p,
 	input                              sys_clk_n
 );
@@ -74,6 +73,7 @@ sys_pll sys_pll_m0
  (
 	.clk_in1                    (sys_clk                  ),
 	.clk_out1                   (clk_50m                  ),
+	.clk_out2                   (clk_16m                  ), 
 	.reset                      (1'b0                     ),
 	.locked                     (                         )
  );
@@ -81,7 +81,6 @@ sys_pll sys_pll_m0
 
 //create bclk of i2s
 always @(posedge clk_50m or negedge rst_n) 
-
 begin
     if (~rst_n) 
     begin
