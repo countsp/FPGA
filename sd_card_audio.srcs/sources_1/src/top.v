@@ -34,13 +34,14 @@ module top
 	input                              key,                   //record play button
 	output[1:0]                        led,
 	output                             fan_pwm,                  // fan control
-	output                             dacdat,          //DAC audio data output 
+	
 	
 	output                             sd_ncs,                 //SD card chip select (SPI mode)
 	output                             sd_dclk,                //SD card clock
 	output                             sd_mosi,                //SD card controller data output
 	input                              sd_miso,                //SD card controller data input	
 	
+	output                             dacdat,          //DAC audio data output 
 	output reg 			   ccclk,
 	output reg 			   lrc,
 	
