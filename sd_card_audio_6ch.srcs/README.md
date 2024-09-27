@@ -1,28 +1,29 @@
-#### 使用AV7k325开发板读取sd卡中wav文件并以i2s格式输出
+#### 使用AV7k325开发板读取sd卡中**6个**wav文件并以i2s格式输出，实现六路音频播放
 
 #### 设备：
 
 1. AV7K325 开发板
    
-2. MAX 98357A功放
+2. MAX 98357A功放 * 6
    
-3. 扬声器
+3. 扬声器 * 6
 
 ![IMG_4137(20240510-171741)](https://github.com/countsp/FPGA/assets/102967883/bfa95b44-33c5-4eb9-8ca7-788cdc740672)
 
 #### 操作：
 
-pin35 AC22 为生成的 **bclk** 与功放板BCLK连接
+pin35 AC22 为生成的 **bclk** （紫色）与6个功放板BCLK连接
 
-pin36 AD22 为生成的 **LRC** 与功放板LRC连接
+pin36 AD22 为生成的 **LRC** （蓝色）与功放板LRC连接
 
-pin5 AF20为生成的 **sdata** 与 功放板din连接
+生成的 **sdata** 与 功放板din连接
 
 功放板供电
 
 按下key2 开始播放sd卡中wav
 
-![IMG_5701](https://github.com/user-attachments/assets/96bdd59e-bc03-4860-8441-bb0df3bf1f89)
+![image](https://github.com/user-attachments/assets/71987747-9c8b-41d1-a1f0-945073272452)
+
 
 # 文件功能
 
@@ -137,5 +138,5 @@ timescale.v定义了仿真时间单位和精度。
     读取WAV文件的数据并存入FIFO缓冲区。
     通过I2S接口将音频数据发送至DAC进行播放。
     支持按键触发播放，状态通过LED指示。
-    使用I2C接口配置WM8731音频编解码器的寄存器。
+
  
