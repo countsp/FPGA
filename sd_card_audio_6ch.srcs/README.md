@@ -1,4 +1,5 @@
 #### 使用AV7k325开发板读取sd卡中**6个**wav文件并以i2s格式输出，实现六路音频播放
+#### Using the AV7k325 FPGA board to read six WAV files from an SD card and output them in I2S format, achieving six-channel audio playback
 
 #### 设备：
 
