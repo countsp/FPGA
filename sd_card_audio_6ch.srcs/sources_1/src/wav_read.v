@@ -143,7 +143,4 @@ always @(posedge clk or posedge rst) begin
         endcase
     end
 end
-
-
 endmodule
-
